@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os/exec"
@@ -59,5 +60,6 @@ func tailLog(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/ws", tailLog)
+	fmt.Println("Starting server on port :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
