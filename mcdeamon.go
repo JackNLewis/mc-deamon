@@ -28,7 +28,7 @@ func tailLog(w http.ResponseWriter, r *http.Request) {
 	defer conn.Close()
 
 	// cmd := exec.Command("tail", "-f", "./biglogfile.txt")
-	cmd := exec.Command("docker", "logs", "--follow", "mc-manager")
+	cmd := exec.Command("docker", "logs", "--follow", "mc-server")
 
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
